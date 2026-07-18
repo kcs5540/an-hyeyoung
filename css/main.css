@@ -666,7 +666,7 @@ button {
   transition: transform 0.7s var(--transition-smooth);
 }
 
-/* Floating Badges around portrait (Non-overlapping Repositioning) */
+/* Floating Badges around portrait (Clean Non-Overlapping Face Clearance) */
 .float-badge {
   position: absolute;
   padding: 0.85rem 1.25rem;
@@ -699,24 +699,23 @@ button {
   color: var(--text-secondary);
 }
 
-/* Top-Left Badge */
+/* Top-Left Badge (Above frame top-left) */
 .badge-top-left {
   top: -24px;
   left: -32px;
 }
 
-/* Bottom-Right Badge (White Glass Card) */
+/* Bottom-Right Badge (Outside frame bottom-right) */
 .badge-bottom-right {
   bottom: -24px;
   right: -28px;
   z-index: 3;
 }
 
-/* Jeju Badge (Dark Navy Card - Moved up to Middle-Left to eliminate collision) */
+/* Jeju Badge (Dark Navy Card - Positioned at lower chest/collar area to clear face) */
 .badge-jeju {
-  top: 60%;
-  left: -40px;
-  transform: translateY(-50%);
+  bottom: 28px;
+  left: -48px;
   background: var(--trust-navy);
   color: #FFF;
   border-color: rgba(255, 255, 255, 0.2);
@@ -1617,9 +1616,8 @@ section {
   }
 
   .badge-jeju {
-    top: 50%;
+    bottom: 20px;
     left: -15px;
-    transform: translateY(-50%);
     font-size: 0.75rem;
     padding: 0.55rem 0.85rem;
   }

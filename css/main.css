@@ -666,10 +666,10 @@ button {
   transition: transform 0.7s var(--transition-smooth);
 }
 
-/* Floating Badges around portrait */
+/* Floating Badges around portrait (Non-overlapping Repositioning) */
 .float-badge {
   position: absolute;
-  padding: 0.8rem 1.1rem;
+  padding: 0.85rem 1.25rem;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
@@ -680,6 +680,7 @@ button {
   gap: 0.75rem;
   z-index: 2;
   font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 .float-badge i { font-size: 1.25rem; }
@@ -698,15 +699,28 @@ button {
   color: var(--text-secondary);
 }
 
-.badge-top-left { top: -20px; left: -25px; }
-.badge-bottom-right { bottom: -20px; right: -25px; }
+/* Top-Left Badge */
+.badge-top-left {
+  top: -24px;
+  left: -32px;
+}
 
+/* Bottom-Right Badge (White Glass Card) */
+.badge-bottom-right {
+  bottom: -24px;
+  right: -28px;
+  z-index: 3;
+}
+
+/* Jeju Badge (Dark Navy Card - Moved up to Middle-Left to eliminate collision) */
 .badge-jeju {
-  bottom: 40px;
-  left: -30px;
+  top: 60%;
+  left: -40px;
+  transform: translateY(-50%);
   background: var(--trust-navy);
   color: #FFF;
   border-color: rgba(255, 255, 255, 0.2);
+  z-index: 4;
 }
 
 .badge-jeju span { color: #FFF; font-weight: 700; }
@@ -1528,7 +1542,6 @@ section {
   border-radius: 24px;
 }
 
-/* Specific Dark Background Hover Override to preserve dark glass contrast */
 .footer-credentials.float-card:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(243, 115, 33, 0.5);
@@ -1563,56 +1576,6 @@ section {
 .footer-address { text-align: center; color: #94A3B8; font-size: 0.88rem; }
 .copyright { margin-top: 0.4rem; font-size: 0.78rem; color: #64748B; }
 
-/* Modal Styling */
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(10, 25, 47, 0.7);
-  backdrop-filter: blur(10px);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.modal-overlay.hidden { display: none; }
-
-.modal-card {
-  max-width: 480px;
-  width: 100%;
-  padding: 2.5rem;
-  border-radius: 32px;
-  background: #FFF;
-}
-
-.modal-icon-glow {
-  width: 72px; height: 72px;
-  border-radius: 50%;
-  background: var(--hanwha-orange-light);
-  color: var(--hanwha-orange);
-  font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.25rem auto;
-}
-
-.modal-title { font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--trust-navy); }
-.modal-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; }
-.modal-actions { display: flex; gap: 1rem; }
-
-.btn-modal-close {
-  flex: 1; padding: 0.9rem; font-size: 0.95rem; font-weight: 700;
-  border-radius: 999px; background: #F1F5F9; color: var(--text-secondary);
-}
-
-.btn-modal-call {
-  flex: 1; padding: 0.9rem; font-size: 0.95rem; font-weight: 800;
-  border-radius: 999px; background: var(--hanwha-orange-gradient); color: #FFF;
-  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-}
-
 /* --------------------------------------------------------------------------
    12. RESPONSIVE BREAKPOINTS (MOBILE & TABLET OPTIMIZATION)
    -------------------------------------------------------------------------- */
@@ -1645,25 +1608,27 @@ section {
   .portrait-card { width: 100%; max-width: 320px; }
   .portrait-wrapper { height: 380px; }
 
+  /* Mobile Badge Spacing & Positioning */
   .badge-top-left {
-    top: -15px;
-    left: 0;
+    top: -16px;
+    left: -10px;
     font-size: 0.75rem;
-    padding: 0.6rem 0.9rem;
-  }
-
-  .badge-bottom-right {
-    bottom: -15px;
-    right: 0;
-    font-size: 0.75rem;
-    padding: 0.6rem 0.9rem;
+    padding: 0.55rem 0.85rem;
   }
 
   .badge-jeju {
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    padding: 0.55rem 0.85rem;
+  }
+
+  .badge-bottom-right {
+    bottom: -16px;
+    right: -10px;
+    font-size: 0.75rem;
+    padding: 0.55rem 0.85rem;
   }
 
   .trust-metrics {

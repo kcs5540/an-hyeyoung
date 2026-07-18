@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>한화생명금융서비스 안혜영 FP | 제주의 더 나은 내일을 설계하는 동반자</title>
+  <meta name="description" content="한화생명금융서비스 이도플러스지점 안혜영 FP. 맞춤 보험 리모델링, 암·건강보험, 종신·연금 자산 설계 전문. 제주지역 1:1 맞춤 무료 상담.">
+  <meta name="keywords" content="한화생명금융서비스, 안혜영 FP, 제주 보험, 이도플러스지점, 제주 재무설계, 한화생명 제주, 보험 고객센터 번호">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="한화생명금융서비스 안혜영 FP | 제주 맞춤 자산·보험 전문가">
+  <meta property="og:description" content="제주의 더 나은 내일을 설계하는 동반자. 1:1 무료 맞춤 보장 분석 및 주요 보험사 고객센터 퀵 링크.">
+  <meta property="og:url" content="http://www.hanwhalifefs.com">
+  <meta property="og:image" content="assets/images/ahn_hyeyoung_portrait.jpg">
+
+  <!-- Google Fonts: Pretendard & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Interactive Antigravity Ambient Canvas background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Floating Navigation Bar -->
+  <header class="navbar-container">
+    <nav class="navbar float-card">
+      <a href="#" class="nav-brand">
+        <div class="hanwha-flame-icon" aria-label="한화 시그니처 심볼">
+          <span class="flame flame-1"></span>
+          <span class="flame flame-2"></span>
+          <span class="flame flame-3"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-sub">한화생명금융서비스</span>
+          <span class="brand-title">이도플러스지점 <strong>안혜영 FP</strong></span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">홈</a></li>
+        <li><a href="#profile">프로필 &amp; 오시는 길</a></li>
+        <li><a href="#customer-center">보험사 고객센터</a></li>
+        <li><a href="#solutions">맞춤 솔루션</a></li>
+        <li><a href="#testimonials">고객 후기</a></li>
+      </ul>
+
+      <!-- Desktop Call to Action Button -->
+      <div class="nav-right-actions">
+        <a href="#consultation" class="btn-primary-sm btn-glow float-drift-sm desktop-cta">
+          <i class="fa-solid fa-comments"></i> 무료 상담
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button type="button" class="hamburger-btn" id="mobile-menu-toggle" aria-label="메뉴 열기">
+          <span class="hamburger-bar bar-1"></span>
+          <span class="hamburger-bar bar-2"></span>
+          <span class="hamburger-bar bar-3"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Slide-Out Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+    <div class="mobile-nav-drawer float-card">
+      <div class="mobile-drawer-header">
+        <div class="nav-brand">
+          <div class="hanwha-flame-icon">
+            <span class="flame flame-1"></span>
+            <span class="flame flame-2"></span>
+            <span class="flame flame-3"></span>
+          </div>
+          <div class="brand-text">
+            <span class="brand-sub">한화생명금융서비스</span>
+            <span class="brand-title"><strong>안혜영 FP</strong></span>
+          </div>
+        </div>
+        <button type="button" class="btn-close-mobile" id="mobile-menu-close" aria-label="메뉴 닫기">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link"><i class="fa-solid fa-house"></i> 홈</a></li>
+        <li><a href="#profile" class="mobile-link"><i class="fa-solid fa-user-tie"></i> 프로필 &amp; 오시는 길</a></li>
+        <li><a href="#customer-center" class="mobile-link"><i class="fa-solid fa-headset"></i> 주요 보험사 고객센터</a></li>
+        <li><a href="#solutions" class="mobile-link"><i class="fa-solid fa-shield-halved"></i> 4대 맞춤 솔루션</a></li>
+        <li><a href="#testimonials" class="mobile-link"><i class="fa-solid fa-star"></i> 고객 후기</a></li>
+        <li><a href="#consultation" class="mobile-link highlight"><i class="fa-solid fa-paper-plane"></i> 1:1 무료 상담 신청</a></li>
+      </ul>
+
+      <div class="mobile-drawer-footer">
+        <a href="tel:01089143810" class="btn-mobile-call">
+          <i class="fa-solid fa-phone-volume"></i> 직통 전화 010.8914.3810
+        </a>
+        <p class="mobile-cred-text">제주시 동광로 30 한화생명 제주사옥 8층</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        
+        <!-- Left Content Float Layer -->
+        <div class="hero-content float-layer-1">
+          <div class="badge-pill float-drift-sm">
+            <span class="pulse-dot"></span>
+            <span class="badge-text">한화생명금융서비스 이도플러스지점</span>
+          </div>
+
+          <h1 class="hero-title float-drift-md">
+            제주의 더 나은 내일을<br>
+            설계하는 <span class="text-orange-gradient">동반자</span>
+          </h1>
+
+          <p class="hero-subtitle float-drift-sm">
+            복잡하고 어려운 보험, 안혜영 FP가 고객님의 소중한 삶과 자산에 꼭 맞춘 
+            <strong>1:1 안심 솔루션</strong>을 제시합니다.
+          </p>
+
+          <div class="hero-actions float-drift-lg">
+            <a href="#consultation" class="btn-hero-glow">
+              <span>무료 맞춤 상담 신청</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="tel:01089143810" class="btn-hero-call">
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>직통 전화 010.8914.3810</span>
+            </a>
+          </div>
+
+          <!-- Quick Trust Metrics -->
+          <div class="trust-metrics float-card">
+            <div class="metric-item">
+              <span class="metric-num">27+</span>
+              <span class="metric-label">제휴 보험사 비교</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-num">100%</span>
+              <span class="metric-label">고객 맞춤 분석</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-num">제주사옥</span>
+              <span class="metric-label">이도플러스지점 8F</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Float Layer (Portrait & Antigravity Badges) -->
+        <div class="hero-visual float-layer-2">
+          <div class="portrait-glow-halo"></div>
+
+          <div class="portrait-card float-drift-hero">
+            <div class="portrait-wrapper">
+              <img src="assets/images/ahn_hyeyoung_portrait.jpg" alt="한화생명금융서비스 안혜영 FP 프로필 사진" class="portrait-img">
+            </div>
+
+            <!-- Floating Trust Badges overlay -->
+            <div class="float-badge badge-top-left float-float-slow">
+              <i class="fa-solid fa-shield-halved icon-orange"></i>
+              <div>
+                <strong>1:1 보장분석</strong>
+                <span>맞춤 리모델링</span>
+              </div>
+            </div>
+
+            <div class="float-badge badge-bottom-right float-float-fast">
+              <i class="fa-solid fa-award icon-blue"></i>
+              <div>
+                <strong>한화생명 FS 인증</strong>
+                <span>안혜영 FP</span>
+              </div>
+            </div>
+
+            <div class="float-badge badge-jeju float-float-mid">
+              <i class="fa-solid fa-location-dot icon-orange"></i>
+              <span>제주 도민 안심 파트너</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Scroll down indicator -->
+      <a href="#profile" class="scroll-indicator float-drift-sm" aria-label="아래로 스크롤">
+        <span class="mouse-icon"><span class="wheel"></span></span>
+        <span class="scroll-text">SCROLL DOWN</span>
+      </a>
+    </section>
+
+    <!-- SECTION 2: PROFESSIONAL PROFILE & CREDIBILITY (LOCATION MAP) -->
+    <section id="profile" class="profile-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag float-drift-sm">PROFESSIONAL PROFILE</span>
+          <h2 class="section-title float-drift-md">투명함과 전문성으로 <span class="text-orange">깊은 신뢰</span>를 만듭니다</h2>
+          <p class="section-subtitle">한화생명금융서비스 이도플러스지점 안혜영 FP의 약속</p>
+        </div>
+
+        <div class="profile-grid">
+          <!-- Modular Typography Box 1 -->
+          <div class="profile-card float-card tilt-card" data-tilt>
+            <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3 class="card-title">안혜영 FP</h3>
+            <p class="card-subtitle">한화생명금융서비스 이도플러스지점</p>
+            <ul class="profile-checklist">
+              <li><i class="fa-solid fa-check text-orange"></i> 개인 &amp; 법인 재무 보장 컨설팅</li>
+              <li><i class="fa-solid fa-check text-orange"></i> 생명·손해보험 27개사 다이렉트 비교</li>
+              <li><i class="fa-solid fa-check text-orange"></i> 암·3대 질병 및 실손 보장 리모델링</li>
+              <li><i class="fa-solid fa-check text-orange"></i> 은퇴 연금 &amp; 자녀 성장 상속 플랜</li>
+            </ul>
+          </div>
+
+          <!-- Modular Typography Box 2 -->
+          <div class="profile-card float-card tilt-card" data-tilt>
+            <div class="card-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3 class="card-title">3대 고객 중심 철학</h3>
+            <p class="card-subtitle">언제나 고객의 입장에서 먼저 생각합니다</p>
+            <div class="philosophy-items">
+              <div class="ph-item">
+                <span class="ph-num">01</span>
+                <div>
+                  <strong>객관적인 비교 분석</strong>
+                  <p>불필요한 중복 보장은 줄이고 핵심을 채웁니다.</p>
+                </div>
+              </div>
+              <div class="ph-item">
+                <span class="ph-num">02</span>
+                <div>
+                  <strong>신속한 청구 &amp; 케어</strong>
+                  <p>보험금 청구부터 유지 관리까지 끝까지 함께합니다.</p>
+                </div>
+              </div>
+              <div class="ph-item">
+                <span class="ph-num">03</span>
+                <div>
+                  <strong>제주 현지 밀착 상담</strong>
+                  <p>언제든 찾아가는 1:1 대면 및 비대면 상담 제공.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Expandable Floating Card -->
+          <div class="profile-card location-card float-card grid-col-span-2" id="location-card">
+            <div class="location-header">
+              <div class="location-title-group">
+                <span class="location-badge"><i class="fa-solid fa-building-user"></i> 제주 본거지 오시는 길</span>
+                <h3>한화생명 제주사옥 8층 (이도플러스지점)</h3>
+                <p class="address-text"><i class="fa-solid fa-location-dot text-orange"></i> 제주시 동광로 30 (이도이동) 한화생명 제주사옥 8층</p>
+              </div>
+              <button type="button" class="btn-copy-address" id="btn-copy-addr">
+                <i class="fa-regular fa-copy"></i> 주소 복사
+              </button>
+            </div>
+
+            <!-- Stylized Minimalist Map Container -->
+            <div class="map-interactive-wrapper" id="map-wrapper">
+              <div class="map-vector-graphic">
+                <div class="map-grid-pattern"></div>
+                <div class="map-pin-pulse">
+                  <div class="pin-wave"></div>
+                  <div class="pin-center"><i class="fa-solid fa-building"></i></div>
+                  <div class="pin-tooltip">
+                    <strong>한화생명 제주사옥 8F</strong>
+                    <span>이도플러스지점 안혜영 FP</span>
+                  </div>
+                </div>
+                <div class="map-landmark jeju-airport">
+                  <i class="fa-solid fa-plane"></i> 제주공항 차로 15분
+                </div>
+                <div class="map-landmark jeju-cityhall">
+                  <i class="fa-solid fa-landmark"></i> 제주시청 인근
+                </div>
+              </div>
+
+              <!-- Map Navigation Buttons -->
+              <div class="map-action-bar">
+                <a href="https://map.kakao.com/link/search/제주시 동광로 30" target="_blank" rel="noopener noreferrer" class="map-btn kakao">
+                  <i class="fa-solid fa-map-location-dot"></i> 카카오맵 길찾기
+                </a>
+                <a href="https://map.naver.com/v5/search/제주시 동광로 30" target="_blank" rel="noopener noreferrer" class="map-btn naver">
+                  <i class="fa-solid fa-compass"></i> 네이버지도 길찾기
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: CUSTOMER CENTER UTILITY GRID -->
+    <section id="customer-center" class="customer-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag float-drift-sm">QUICK SERVICE UTILITY</span>
+          <h2 class="section-title float-drift-md">주요 보험사 고객센터 <span class="text-orange">Quick Link</span></h2>
+          <p class="section-subtitle">명함 뒷면의 27개 주요 보험사 전화번호를 클릭 한 번으로 바로 연결하세요</p>
+          
+          <!-- Search & Filter Bar -->
+          <div class="search-filter-box float-card">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="insurance-search" placeholder="보험사명 또는 전화번호 검색 (예: 한화생명, 1588...)" aria-label="보험사 검색">
+            <button type="button" class="btn-clear-search" id="btn-clear" aria-label="검색어 지우기"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs-scroll">
+          <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">전체 (27)</button>
+            <button class="tab-btn" data-category="life"><i class="fa-solid fa-heart-pulse"></i> 생명보험 (16)</button>
+            <button class="tab-btn" data-category="nonlife"><i class="fa-solid fa-car-burst"></i> 손해보험 (11)</button>
+          </div>
+        </div>
+
+        <!-- 2-Column Responsive Grid Layout -->
+        <div class="insurance-grid-container" id="insurance-grid">
+          
+          <!-- LIFE INSURANCE SECTION -->
+          <div class="insurance-category-group" data-group="life">
+            <h3 class="group-title"><i class="fa-solid fa-shield-heart text-orange"></i> 생명보험사 고객센터</h3>
+            <div class="grid-cards-wrap" id="life-cards"></div>
+          </div>
+
+          <!-- NON-LIFE INSURANCE SECTION -->
+          <div class="insurance-category-group" data-group="nonlife">
+            <h3 class="group-title"><i class="fa-solid fa-house-chimney-medical text-blue"></i> 손해보험사 고객센터</h3>
+            <div class="grid-cards-wrap" id="nonlife-cards"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: CUSTOMIZED SOLUTIONS CARDS -->
+    <section id="solutions" class="solutions-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag float-drift-sm">CUSTOM SOLUTIONS</span>
+          <h2 class="section-title float-drift-md">고객의 삶을 보살피는 <span class="text-orange">4가지 핵심 플랜</span></h2>
+          <p class="section-subtitle">각 영역별 전문 맞춤 설계로 최적의 안심 보장을 약속합니다</p>
+        </div>
+
+        <div class="solutions-3d-grid">
+          
+          <!-- Card 1: 종신보험 -->
+          <div class="solution-card float-card depth-card-1 tilt-card" data-tilt>
+            <div class="solution-badge">자산 &amp; 가족 보호</div>
+            <div class="solution-icon-wrap icon-bg-orange">
+              <i class="fa-solid fa-users-viewfinder"></i>
+            </div>
+            <h3 class="solution-title">종신 / 정기보험</h3>
+            <p class="solution-desc">
+              가장 유사시 사랑하는 가족의 삶을 지키는 가장 든든한 안전망. 
+              상속세 재원 마련 및 유족 생활 자금 플랜을 설계합니다.
+            </p>
+            <ul class="solution-features">
+              <li><i class="fa-regular fa-circle-check"></i> 상속 자산 &amp; 사망 보장 설계</li>
+              <li><i class="fa-regular fa-circle-check"></i> 생활 자금 전환 유연성</li>
+            </ul>
+            <a href="#consultation" class="btn-solution-trigger" data-solution="종신/정기보험">
+              <span>상담 신청하기</span> <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <!-- Card 2: 암/건강보험 -->
+          <div class="solution-card float-card depth-card-2 tilt-card" data-tilt>
+            <div class="solution-badge">3대 질병 완벽 대비</div>
+            <div class="solution-icon-wrap icon-bg-blue">
+              <i class="fa-solid fa-stethoscopes"></i>
+            </div>
+            <h3 class="solution-title">암 / 건강보험</h3>
+            <p class="solution-desc">
+              발병률 높은 암·뇌·심장 3대 진단비부터 신의료 기술 수술비, 
+              입원 일당, 표적항암치료 특약까지 꼼꼼하게 채웁니다.
+            </p>
+            <ul class="solution-features">
+              <li><i class="fa-regular fa-circle-check"></i> 표적항암 &amp; 최신 수술비 특약</li>
+              <li><i class="fa-regular fa-circle-check"></i> 비갱신형 &amp; 무해지환급형 비교</li>
+            </ul>
+            <a href="#consultation" class="btn-solution-trigger" data-solution="암/건강보험">
+              <span>상담 신청하기</span> <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <!-- Card 3: 어린이보험 -->
+          <div class="solution-card float-card depth-card-3 tilt-card" data-tilt>
+            <div class="solution-badge">자녀 성장 종합 보장</div>
+            <div class="solution-icon-wrap icon-bg-orange">
+              <i class="fa-solid fa-baby-carriage"></i>
+            </div>
+            <h3 class="solution-title">어린이 / 자녀보험</h3>
+            <p class="solution-desc">
+              소중한 아이의 첫걸음부터 성인이 될 때까지. 
+              상해, 질병, 학교 생활 사고 및 100세 만기 보장으로 이어집니다.
+            </p>
+            <ul class="solution-features">
+              <li><i class="fa-regular fa-circle-check"></i> 태아 특약 &amp; 성장기 상해 대비</li>
+              <li><i class="fa-regular fa-circle-check"></i> 성인병 이행 대비 든든 보장</li>
+            </ul>
+            <a href="#consultation" class="btn-solution-trigger" data-solution="어린이/자녀보험">
+              <span>상담 신청하기</span> <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <!-- Card 4: 연금/저축보험 -->
+          <div class="solution-card float-card depth-card-4 tilt-card" data-tilt>
+            <div class="solution-badge">행복한 노후 준비</div>
+            <div class="solution-icon-wrap icon-bg-blue">
+              <i class="fa-solid fa-piggy-bank"></i>
+            </div>
+            <h3 class="solution-title">연금 / 저축보험</h3>
+            <p class="solution-desc">
+              100세 시대, 여유롭고 품격 있는 은퇴 이후의 삶. 
+              세제 혜택 연금저축 및 비과세 연금 플랜으로 안정된 자산을 불립니다.
+            </p>
+            <ul class="solution-features">
+              <li><i class="fa-regular fa-circle-check"></i> 세액공제 &amp; 비과세 혜택 분석</li>
+              <li><i class="fa-regular fa-circle-check"></i> 종신 연금 수령 플랜</li>
+            </ul>
+            <a href="#consultation" class="btn-solution-trigger" data-solution="연금/저축보험">
+              <span>상담 신청하기</span> <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: SOCIAL PROOF & TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag float-drift-sm">REAL CLIENT REVIEWS</span>
+          <h2 class="section-title float-drift-md">제주 도민 고객들이 이야기하는 <span class="text-orange">안혜영 FP</span></h2>
+          <p class="section-subtitle">진심을 담은 컨설팅으로 쌓아온 소중한 후기입니다</p>
+        </div>
+
+        <!-- Floating Horizontal Track -->
+        <div class="testimonial-float-container">
+          
+          <div class="testimonial-bubble bubble-1 float-float-slow">
+            <div class="bubble-content">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p>
+                "제주 현지 특성을 잘 고려해서 기존에 빼먹고 있던 질병 특약과 중복 보험을 
+                꼼꼼하게 정리해 주셨습니다. 월 보험료는 줄고 보장은 2배로 넓어졌어요!"
+              </p>
+            </div>
+            <div class="bubble-author">
+              <div class="avatar-circle">김</div>
+              <div>
+                <strong>김OO 고객님</strong>
+                <span>제주시 이도동 (자영업)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-bubble bubble-2 float-float-mid">
+            <div class="bubble-content">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p>
+                "갑작스러운 입원으로 당황했는데, 안혜영 FP님이 제 일처럼 직접 보험금 청구 서류부터 
+                지급까지 당일 처리해 주셔서 정말 감동이었습니다."
+              </p>
+            </div>
+            <div class="bubble-author">
+              <div class="avatar-circle avatar-blue">박</div>
+              <div>
+                <strong>박OO 고객님</strong>
+                <span>서귀포시 연동 (직장인)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-bubble bubble-3 float-float-fast">
+            <div class="bubble-content">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p>
+                "가족 전체의 암/건강보험을 한화생명 및 여러 손해보험사와 비교해 보고 
+                가장 합리적인 조합을 추천해주셨어요. 친절하고 신뢰감 넘치는 설명 덕에 안심입니다."
+              </p>
+            </div>
+            <div class="bubble-author">
+              <div class="avatar-circle">이</div>
+              <div>
+                <strong>이OO 고객님</strong>
+                <span>제주시 노형동 (주부)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONVERSION LEAD FORM & INTEGRATED FOOTER -->
+    <section id="consultation" class="consultation-section">
+      <div class="container">
+        
+        <div class="consultation-box float-card">
+          <div class="consultation-header text-center">
+            <span class="badge-pill float-drift-sm">1:1 PRIVACY GUARANTEED</span>
+            <h2 class="form-title">당신의 미래를 위한 <span class="text-orange-gradient">간편 맞춤 상담 신청</span></h2>
+            <p class="form-subtitle">버튼을 누르시면 입력하신 내용이 안혜영 FP의 SMS 문자 메시지로 전송됩니다.</p>
+          </div>
+
+          <!-- Lead Form -->
+          <form id="lead-form" class="lead-form-grid" novalidate>
+            
+            <div class="form-group float-drift-sm">
+              <label for="user-name">성함 <span class="text-orange">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" id="user-name" name="name" placeholder="홍길동" autocomplete="name" required>
+              </div>
+            </div>
+
+            <div class="form-group float-drift-sm">
+              <label for="user-phone">연락처 <span class="text-orange">*</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <input type="tel" id="user-phone" name="phone" placeholder="010-0000-0000" inputmode="tel" autocomplete="tel" maxlength="13" required>
+              </div>
+            </div>
+
+            <div class="form-group grid-col-span-2 float-drift-sm">
+              <label for="inquiry-type">상담 분야 선택</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-list-check"></i>
+                <select id="inquiry-type" name="type">
+                  <option value="종합 보장분석 &amp; 리모델링">종합 보장분석 &amp; 리모델링 (추천)</option>
+                  <option value="암 / 3대 질병 / 건강보험">암 / 3대 질병 / 건강보험</option>
+                  <option value="종신 / 정기 / 자산 상속 플랜">종신 / 정기 / 자산 상속 플랜</option>
+                  <option value="어린이 / 자녀보험">어린이 / 자녀보험</option>
+                  <option value="연금 / 저축 / 은퇴 설계">연금 / 저축 / 은퇴 설계</option>
+                  <option value="기타 문의">기타 문의</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group grid-col-span-2 float-drift-sm">
+              <label for="user-message">상담 요청 내용 (선택)</label>
+              <div class="input-wrapper textarea-wrapper">
+                <i class="fa-regular fa-comment-dots"></i>
+                <textarea id="user-message" name="message" rows="3" placeholder="궁금하신 내용이나 희망하시는 상담 시간대를 적어주세요."></textarea>
+              </div>
+            </div>
+
+            <div class="form-privacy grid-col-span-2 float-drift-sm">
+              <label class="checkbox-container">
+                <input type="checkbox" id="privacy-agree" required checked>
+                <span class="checkmark"></span>
+                <span class="privacy-text">
+                  개인정보 수집 및 이용 동의 (상담 목적 이외 용도로 사용되지 않습니다)
+                </span>
+              </label>
+            </div>
+
+            <div class="form-submit-wrap grid-col-span-2">
+              <button type="submit" class="btn-submit-glow btn-pulse">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>무료 상담 신청하기 (문자 전송)</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- INTEGRATED FOOTER -->
+  <footer class="footer-container">
+    <div class="container footer-content">
+      
+      <div class="footer-brand float-drift-sm">
+        <div class="footer-logo">
+          <div class="hanwha-flame-icon sm">
+            <span class="flame flame-1"></span>
+            <span class="flame flame-2"></span>
+            <span class="flame flame-3"></span>
+          </div>
+          <div>
+            <strong>한화생명금융서비스</strong>
+            <span>이도플러스지점 안혜영 FP</span>
+          </div>
+        </div>
+        <p class="footer-slogan">"제주의 더 나은 내일을 설계하는 동반자"</p>
+      </div>
+
+      <!-- Business Card Credentials Bar -->
+      <div class="footer-credentials float-card">
+        <div class="cred-item">
+          <i class="fa-solid fa-phone text-orange"></i>
+          <div>
+            <span class="cred-label">TEL</span>
+            <strong class="cred-val">064.752.6958</strong>
+          </div>
+        </div>
+        <div class="cred-divider"></div>
+        <div class="cred-item">
+          <i class="fa-solid fa-fax text-blue"></i>
+          <div>
+            <span class="cred-label">FAX</span>
+            <strong class="cred-val">064.722.6968</strong>
+          </div>
+        </div>
+        <div class="cred-divider"></div>
+        <div class="cred-item">
+          <i class="fa-solid fa-mobile-screen-button text-orange"></i>
+          <div>
+            <span class="cred-label">MOBILE</span>
+            <a href="tel:01089143810" class="cred-val highlight">010.8914.3810</a>
+          </div>
+        </div>
+        <div class="cred-divider"></div>
+        <div class="cred-item">
+          <i class="fa-solid fa-globe text-blue"></i>
+          <div>
+            <span class="cred-label">OFFICIAL</span>
+            <a href="https://www.hanwhalifefs.com" target="_blank" rel="noopener noreferrer" class="cred-val link">www.hanwhalifefs.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-address">
+        <p><i class="fa-solid fa-location-dot"></i> 제주시 동광로 30 (이도이동) 한화생명 제주사옥 8층 (이도플러스지점)</p>
+        <p class="copyright">© 2026 Hanwha Life Financial Service Ahn Hye-Young FP. All Rights Reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Custom Scripts -->
+  <script src="js/floating-canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
